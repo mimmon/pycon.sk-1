@@ -2,6 +2,8 @@
 *.log
 *.pot
 *.pyc
+staging_settings.py
+live_settings.py
 local_settings.py
 local_config.py
 local_gunicorn.py
@@ -9,6 +11,7 @@ config.cfg
 *.mo
 
 # Packages
+konfera
 *.egg
 *.egg-info
 dist
@@ -49,5 +52,8 @@ pip-log.txt
 *.swp
 *.test
 
+# Collected static files
+public/static/
+
 # Files uploaded by a user
-media/
+public/media/

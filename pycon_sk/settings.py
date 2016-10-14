@@ -25,7 +25,7 @@ SECRET_KEY = '8uvxx^q71av#dgq6o1_g)fm-s2k1=9p!90$@&gr(+%p*8#w8m7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', '127.0.0.1:8000']
 
 
 # Application definition
@@ -127,10 +127,10 @@ LOCALE_PATHS = [
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'public', 'static')
 STATIC_URL = '/static/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'public', 'media')
 MEDIA_URL = '/media/'
 
 GOOGLE_ANALYTICS = 'UA-XXXXXXXX-X'
@@ -139,7 +139,7 @@ GOOGLE_ANALYTICS = 'UA-XXXXXXXX-X'
 # version control system allowing for settings to be defined (overwritten) per
 # machine, and also for security reasons not to store passwords in the VCS.
 try:
-    from local_settings import *
+    from .local_settings import *
 except ImportError:
     pass
 
