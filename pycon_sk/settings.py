@@ -134,3 +134,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 GOOGLE_ANALYTICS = 'UA-XXXXXXXX-X'
+
+# Allow any settings to be defined in local_settings.py which is ignored in our
+# version control system allowing for settings to be defined (overwritten) per
+# machine, and also for security reasons not to store passwords in the VCS.
+try:
+    from local_settings import *
+except ImportError:
+    pass
+
