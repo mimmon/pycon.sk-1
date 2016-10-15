@@ -33,7 +33,7 @@
                 <property_group name='daemon' type='application'>
                         <propval name='app' type='astring' value='pycon_sk.wsgi' />
                         <propval name='bin' type='astring' value='/data/www/pycon.sk/envs3/bin/gunicorn' />
-                        <propval name='config' type='astring' value='/data/www/pycon.sk/etc/gunicorn.py' />
+                        <propval name='config' type='astring' value='/data/www/pycon.sk/doc/gunicorn.py' />
                 </property_group>
         </instance>
 
