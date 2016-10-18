@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <!DOCTYPE service_bundle SYSTEM "/usr/share/lib/xml/dtd/service_bundle.dtd.1">
 
-<service_bundle type='manifest' name='gunicorn'>
-  <service name='application/gunicorn' type='service' version='0'>
+<service_bundle type='manifest' name='pyconsk'>
+  <service name='application/pyconsk' type='service' version='0'>
 
         <dependency name='network' grouping='require_all' restart_on='none' type='service'>
                 <service_fmri value='svc:/milestone/network:default'/>
@@ -21,7 +21,23 @@
         <exec_method type='method' name='refresh' exec=':kill -HUP' timeout_seconds='60'>
         </exec_method>
 
-        <instance name='pyconsk' enabled='true'>
+        <instance name='staging' enabled='true'>
+                <method_context working_directory='/data/www/staging.pycon.sk'>
+                        <method_credential user='pyconsk' group='pyconsk' />
+                        <method_environment>
+                                <envvar name='PYTHONPATH' value='/data/www/staging.pycon.sk' />
+                                <envvar name='VIRTUAL_ENV' value='/data/www/staging.pycon.sk/envs3' />
+                                <envvar name='PATH' value='/data/www/staging.pycon.sk/envs3/bin:/usr/local/bin:/opt/local/bin:/usr/bin:/bin' />
+                        </method_environment>
+                </method_context>
+                <property_group name='daemon' type='application'>
+                        <propval name='app' type='astring' value='pycon_sk.wsgi' />
+                        <propval name='bin' type='astring' value='/data/www/staging.pycon.sk/envs3/bin/gunicorn' />
+                        <propval name='config' type='astring' value='/data/www/staging.pycon.sk/doc/staging.py' />
+                </property_group>
+        </instance>
+
+        <instance name='live' enabled='true'>
                 <method_context working_directory='/data/www/pycon.sk'>
                         <method_credential user='pyconsk' group='pyconsk' />
                         <method_environment>
