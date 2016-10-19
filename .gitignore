@@ -11,6 +11,7 @@ config.cfg
 *.mo
 
 # Packages
+django-konfera
 konfera
 *.egg
 *.egg-info
@@ -51,6 +52,10 @@ pip-log.txt
 .DS_Store
 *.swp
 *.test
+
+# Public generated files
+public/commit-*.txt
+public/service-*.txt
 
 # Collected static files
 public/static/
