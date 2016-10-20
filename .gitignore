@@ -13,6 +13,7 @@ config.cfg
 # Packages
 django-konfera
 konfera
+payments
 *.egg
 *.egg-info
 dist
