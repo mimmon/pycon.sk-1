@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'spy',
     'konfera',
 ]
 
@@ -132,8 +133,6 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'public', 'media')
 MEDIA_URL = '/media/'
-
-GOOGLE_ANALYTICS = 'UA-XXXXXXXX-X'
 
 # Allow any settings to be defined in local_settings.py which is ignored in our
 # version control system allowing for settings to be defined (overwritten) per

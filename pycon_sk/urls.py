@@ -20,9 +20,19 @@ from django.contrib import admin
 
 
 urlpatterns = [
+    url(r'', include('spy.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'', include('konfera.urls')),
 ]
 
 if settings.DEBUG:
+    try:
+        import debug_toolbar
+    except ImportError:
+        pass
+    else:
+        urlpatterns += [
+            url(r'^__debug__/', include(debug_toolbar.urls)),
+        ]
+
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

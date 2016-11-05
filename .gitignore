@@ -11,6 +11,8 @@ config.cfg
 *.mo
 
 # Packages
+django-spy
+spy
 django-konfera
 konfera
 payments
