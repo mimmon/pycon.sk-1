@@ -23,6 +23,7 @@ urlpatterns = [
     url(r'', include('spy.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'', include('konfera.urls')),
+    url(r'', include('payments.urls', namespace='konfera_payments')),
 ]
 
 if settings.DEBUG:
