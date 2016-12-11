@@ -1,5 +1,5 @@
 Django==1.10.2
 gunicorn==19.6.0
 pytz==2016.7
-Pillow=3.4.2
+Pillow==3.4.2
 -e git+https://github.com/pyconsk/django-konfera#egg=django-konfera
