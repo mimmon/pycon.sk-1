@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'wkhtmltopdf',
     'spy',
     'konfera',
     'payments',
@@ -116,6 +117,16 @@ LOGGING = {
     'loggers': {
         'django': {
             'handlers': ['file'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+        'konfera': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        'payments': {
+            'handlers': ['file'],
             'level': 'DEBUG',
             'propagate': True,
         },
@@ -152,6 +163,15 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'public', 'media')
 MEDIA_URL = '/media/'
+
+WKHTMLTOPDF_CMD_OPTIONS = {
+    'quiet': True,
+}
+
+if os.name != 'nt':
+    WKHTMLTOPDF_CMD = '/usr/local/bin/wkhtmltopdf'
+else:
+    WKHTMLTOPDF_DEBUG = True
 
 # Allow any settings to be defined in local_settings.py which is ignored in our
 # version control system allowing for settings to be defined (overwritten) per
