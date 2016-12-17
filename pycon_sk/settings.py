@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'sitetree',
     'wkhtmltopdf',
     'spy',
     'konfera',
@@ -163,6 +164,10 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'public', 'media')
 MEDIA_URL = '/media/'
+
+NAVIGATION_ENABLED = True
+NAVIGATION_BRAND = 'PyCon SK'
+NAVIGATION_LOGO = '/static/images/logo/pycon.svg'
 
 WKHTMLTOPDF_CMD_OPTIONS = {
     'quiet': True,
