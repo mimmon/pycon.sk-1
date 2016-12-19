@@ -169,9 +169,7 @@ NAVIGATION_ENABLED = True
 NAVIGATION_BRAND = 'PyCon SK'
 NAVIGATION_LOGO = '/static/images/logo/pycon.svg'
 
-WKHTMLTOPDF_CMD_OPTIONS = {
-    'quiet': True,
-}
+ENABLE_ORDER_PDF_GENERATION = True
 
 if os.name != 'nt':
     WKHTMLTOPDF_CMD = '/usr/local/bin/wkhtmltopdf'
