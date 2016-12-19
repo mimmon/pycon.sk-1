@@ -21,7 +21,6 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'', include('spy.urls')),
-    url(r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'', include('konfera.urls')),
     url(r'', include('payments.urls', namespace='konfera_payments')),
