@@ -61,6 +61,7 @@ public/commit-*.txt
 public/service-*.txt
 
 # Collected static files
+public/static/
 
 # Files uploaded by a user
 public/media/
